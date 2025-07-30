@@ -1,30 +1,37 @@
-import Pagination from 'react-bootstrap/Pagination';
+import React from 'react';
+import { Pagination } from 'react-bootstrap';
 
-const Pagin = ({ totalPages, currentPage, onPageChange }) => {
-  const pageItems = [];
+const ComntPagin = ({ currentPage, onPageChange }) => {
+  return ( 
+    <Pagination className="justify-content-center">
+    <Pagination.Item
+      
+      active={1 == currentPage}
+      onClick={() => onPageChange(1)}
+      className='gray-active'
+      
+    >
+    1
+    </Pagination.Item>
 
-  for (let i = 1; i <= totalPages; i++) {
-    pageItems.push(
-      <Pagination.Item
-        key={i}
-        active={i === currentPage}
-        onClick={() => onPageChange(i)}
-      >
-        {i}
-      </Pagination.Item>
-    );
-  }
+    <Pagination.Item
+      
+      active={2 == currentPage}
+      onClick={() => onPageChange(2)}
+    >
+    2
+    </Pagination.Item>
 
-  return (
-    <Pagination>
-      <Pagination.First onClick={() => onPageChange(1)} />
-      <Pagination.Prev onClick={() => onPageChange(Math.max(currentPage - 1, 1))} />
-      {pageItems}
-      <Pagination.Next onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))} />
-      <Pagination.Last onClick={() => onPageChange(totalPages)} />
+    <Pagination.Item
+      
+      active={3 == currentPage}
+      onClick={() => onPageChange(3)}
+    >
+    3
+    </Pagination.Item>
     </Pagination>
-  );
-};
-
-export default Pagin;
+   );
+}
+ 
+export default ComntPagin;
 

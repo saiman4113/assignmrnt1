@@ -22,7 +22,7 @@ const Profile = () => {
             backgroundColor: 'white',
             borderRadius: '10px',
             fontSize: '20px'
-            }}>back</button>
+            }}>←back</button>
 
     </Container>
       

@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.page-item.active .page-link {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.page-item:not(.active) .page-link {
+  color: #495057;
+}
