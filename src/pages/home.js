@@ -120,10 +120,11 @@ const Home = () => {
   else if (currentPage === 3) 
     displayed = [4, 5];
 
-  const [replying, setReplyingTo] = useState(false);
-  const reply = true;
+  const [replying, setReplyingTo] = useState(null);
+  
   const handleReplyClick = (reply) => {
-    setReplyingTo(replying == reply ? false : reply);
+    setReplyingTo(replying == reply ? null : reply);
+    
 };
 
 
@@ -226,9 +227,9 @@ const Home = () => {
               <div className="mt-2">
                 <Button variant="outline-none" onClick={() => handleLike(i)} style={{ fontWeight: comments[i].clicked ? "bold" : "normal" }}>Like {comments[i].like}</Button>
                 <Button variant="outline-none" onClick={() => handleDislike(i)} style={{ fontWeight: comments[i].clicked1 ? "bold" : "normal" }}>Dislike {comments[i].dislike}</Button>
-                <Button variant="outline-none" onClick={()=>handleReplyClick(reply)}>Reply</Button>
+                <Button variant="outline-none" onClick={()=>handleReplyClick(i)}>Reply</Button>
               </div>
-              {replying && (
+              {replying ==i && (
               <Form className="d-flex mt-3">
                 <Form.Control 
                   type="text" 
