@@ -43,7 +43,7 @@ const Home = () => {
       }
       setSelectedReaction(null);
     } else {
-      // Deselect previous
+
       switch (selectedReaction) {
         case 'like':
           setLikeCount((prev) => Math.max(0, prev - 1));
@@ -61,7 +61,6 @@ const Home = () => {
           break;
       }
 
-      // Select new
       switch (reaction) {
         case 'like':
           setLikeCount((prev) => prev + 1);
